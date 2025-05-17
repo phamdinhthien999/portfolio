@@ -316,9 +316,10 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  margin-top: 72px;
+  margin-top: 75px;
   overflow: hidden;
   transition: var(--transition-2);
+  max-height: 110px;
 }
 
 .sidebar.active { max-height: 405px; }
