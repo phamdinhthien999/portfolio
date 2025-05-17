@@ -117,7 +117,7 @@ onUnmounted(() => {
 
 .modal-image {
   display: block;
-  /* max-width: calc(90vw - 40px); */
+  max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
 }
