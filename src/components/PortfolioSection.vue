@@ -37,12 +37,12 @@
             class="project-item active" 
             :data-filter-item="true"
             :data-category="project.category"
+            @click="openImageModal(project)"
           >
             <a>
               <figure class="project-img">
                 <div 
                   class="project-item-icon-box"
-                  @click="openImageModal(project)"
                 >
                   <ion-icon name="eye-outline"></ion-icon>
                 </div>
@@ -196,6 +196,7 @@ const showNextImage = () => {
   align-items: flex-end;
   opacity: 0;
   transition: opacity 0.3s ease; 
+  cursor: pointer;
 }
 
 .project-img:hover .project-overlay {
