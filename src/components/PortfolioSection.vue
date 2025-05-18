@@ -51,14 +51,12 @@
                   :alt="project.title" 
                   loading="lazy"
                 >
-                <div v-if="project.description" class="project-overlay">
+                <div v-if="project.title" class="project-overlay">
                   <div class="project-title">
                     {{ project.title }}
                   </div>
                 </div>
               </figure>
-              <!-- <h3 class="project-title">{{ project.title }}</h3> -->
-              <!-- <p class="project-category">{{ project.category }}</p> -->
             </a>
           </li>
         </ul>
@@ -71,6 +69,8 @@
       :is-open="isModalOpen"
       :image-src="selectedImage?.image"
       :image-alt="selectedImage?.title"
+      :title="selectedImage?.title"
+      :description="selectedImage?.description"
       :can-navigate="filteredProjects.length > 1"
       @close="closeImageModal"
       @previous="showPreviousImage"

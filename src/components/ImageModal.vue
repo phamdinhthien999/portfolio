@@ -6,30 +6,37 @@
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
-        <div class="modal-image-wrapper">
-          <!-- Navigation buttons -->
-          <button 
-            v-if="canNavigate"
-            class="modal-nav-btn modal-prev-btn" 
-            @click="$emit('previous')"
-          >
-            <ion-icon name="chevron-back-outline"></ion-icon>
-          </button>
+        <div class="modal-container">
+          <div class="modal-image-wrapper">
+            <!-- Navigation buttons -->
+            <button 
+              v-if="canNavigate"
+              class="modal-nav-btn modal-prev-btn" 
+              @click="$emit('previous')"
+            >
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
 
-          <button 
-            v-if="canNavigate"
-            class="modal-nav-btn modal-next-btn" 
-            @click="$emit('next')"
-          >
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-          </button>
+            <button 
+              v-if="canNavigate"
+              class="modal-nav-btn modal-next-btn" 
+              @click="$emit('next')"
+            >
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
 
-          <img 
-            :src="imageSrc" 
-            :alt="imageAlt"
-            class="modal-image"
-            @error="handleImageError"
-          >
+            <img 
+              :src="imageSrc" 
+              :alt="imageAlt"
+              class="modal-image"
+              @error="handleImageError"
+            >
+          </div>
+
+          <div class="modal-info">
+            <h3 class="modal-title" v-if="title">{{ title }}</h3>
+            <p class="modal-description" v-if="description">{{ description }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -55,6 +62,14 @@ const props = defineProps({
   canNavigate: {
     type: Boolean,
     default: false
+  },
+  title: {
+    type: String,
+    default: ''
+  },
+  description: {
+    type: String,
+    default: ''
   }
 })
 
@@ -104,29 +119,96 @@ onUnmounted(() => {
   max-width: 90vw;
   max-height: 90vh;
   background: transparent;
-  display: flex;
-  align-items: center;
 }
 
-.modal-image-wrapper {
+.modal-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
   background: var(--eerie-black-1);
   border-radius: 14px;
   overflow: hidden;
+}
+
+.modal-image-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-image {
   display: block;
-  max-width: 100%;
-  max-height: 90vh;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
   object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-info {
+  padding: 20px;
+  color: var(--white);
+}
+
+.modal-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--vegas-gold);
+}
+
+.modal-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--light-gray);
+}
+
+ion-icon.md.hydrated {
+  font-size: 20px;
+}
+
+@media (max-width: 850px) {
+  .modal-container {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-title {
+    font-size: 16px;
+  }
+  
+  .modal-description {
+    font-size: 14px;
+  }
+
+  .modal-overlay {
+    align-items: initial;
+    padding: 0px;
+    padding-top: 48px;
+  }
+
+  .modal-image {
+    max-height: 65vh;
+  }
+
+  .modal-info {
+    padding: 12px;
+    padding-top: 0px;
+  }
+
+  .modal-close-btn {
+    background: var(--onyx);
+  }
+  
+  ion-icon.md.hydrated {
+    font-size: 16px;
+  }
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: var(--onyx);
+  top: 4px;
+  right: 4px;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -168,12 +250,12 @@ onUnmounted(() => {
 }
 
 .modal-prev-btn {
-  left: 20px;
+  left: 10px;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
 }
 
 .modal-next-btn {
-  right: 20px;
+  right: 10px;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
 }
 
