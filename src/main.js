@@ -4,7 +4,6 @@ import App from './App.vue'
 
 // Import components
 import AboutSection from './components/AboutSection.vue'
-import ResumeSection from './components/ResumeSection.vue'
 import PortfolioSection from './components/PortfolioSection.vue'
 
 // Router configuration
@@ -18,10 +17,6 @@ const router = createRouter({
     {
       path: '/about',
       component: AboutSection
-    },
-    {
-      path: '/resume',
-      component: ResumeSection
     },
     {
       path: '/portfolio',

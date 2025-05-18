@@ -29,17 +29,23 @@
       </ul>
     </section>
  
-    <!-- Clients -->
-    <section class="clients">
-      <h3 class="h3 clients-title">Clients</h3>
+    <!-- Experience Timeline -->
+    <section class="timeline">
+      <h3 class="h3 service-title">Work Experience</h3>
+      <div class="title-wrapper">
+        <div class="icon-box">
+          <ion-icon name="book-outline"></ion-icon>
+        </div>
+        <h3 class="h3">Experience</h3>
+      </div>
 
-      <ul class="clients-list has-scrollbar">
-        <li v-for="client in clients" :key="client.id" class="clients-item">
-          <a href="#">
-            <img :src="client.logo" :alt="client.name">
-          </a>
+      <ol class="timeline-list">
+        <li v-for="exp in experience" :key="exp.id" class="timeline-item">
+          <h4 class="h4 timeline-item-title">{{ exp.role }} - {{ exp.company }}</h4>
+          <span>{{ exp.period }}</span>
+          <p class="timeline-text">{{ exp.description }}</p>
         </li>
-      </ul>
+      </ol>
     </section>
   </article>
 </template>
@@ -65,44 +71,35 @@ const services = ref([
   }
 ])
 
-const testimonials = ref([
+const experience = ref([
   {
     id: 1,
-    name: 'Daniel lewis',
-    avatar: '/assets/images/avatar-1.png',
-    text: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client.',
-    date: '2021-06-14'
+    role: 'UI/UX Designer',
+    company: 'Lotte Innovate Vietnam',
+    period: '07/2023 - Now',
+    description: 'Participated in the role of UI/UX designer in projects providing digital solutions for clients (Website/Mobile Apps): Lotte World Aquarium Hanoi Homepage; Lotte Mall West Lake Hanoi Homepage; Smart Farm System (HMI, Web System, App Mobile); SaaS Portal; etc.'
   },
   {
     id: 2,
-    name: 'Jessica miller',
-    avatar: '/assets/images/avatar-2.png',
-    text: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client.',
-    date: '2021-06-14'
+    role: 'UI/UX Freelancer',
+    company: 'SellerSmith - BraveBits Vietnam',
+    period: '12/2022 - 07/2023',
+    description: 'Participated as a designer for website templates on PageFly – a Shopify App that provides website templates across various industries, helping users design their personal or business websites.'
   },
   {
     id: 3,
-    name: 'Emily evans',
-    avatar: '/assets/images/avatar-3.png',
-    text: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client.',
-    date: '2021-06-14'
+    role: 'UI/UX Designer',
+    company: 'HOCMAI.VN - Galaxy Education',
+    period: '11/2021 - 06/2023',
+    description: 'Participated in research, ideation, and design of website/mobile app products in the education technology sector, including:\n- Online education apps (HOCMAI, HOCMAI Primary);\n- Online learning websites (HOCMAI.VN; HSA, TSA, IELTS competency assessments);\n- Education management systems (HOCMAI CMS, HOCMAI EMS, Loyalty).'
   },
   {
     id: 4,
-    name: 'Henry william',
-    avatar: '/assets/images/avatar-4.png',
-    text: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client.',
-    date: '2021-06-14'
+    role: 'UI/UX Designer',
+    company: 'VNPT Fintech - VNPT-Media',
+    period: '05/2021 - 11/2021',
+    description: 'Participated in designing services for the VNPT Money e-wallet and VNPTPay Merchant'
   }
-])
-
-const clients = ref([
-  { id: 1, name: 'Client 1', logo: '/assets/images/logo-1-color.png' },
-  { id: 2, name: 'Client 2', logo: '/assets/images/logo-2-color.png' },
-  { id: 3, name: 'Client 3', logo: '/assets/images/logo-3-color.png' },
-  { id: 4, name: 'Client 4', logo: '/assets/images/logo-4-color.png' },
-  { id: 5, name: 'Client 5', logo: '/assets/images/logo-5-color.png' },
-  { id: 6, name: 'Client 6', logo: '/assets/images/logo-6-color.png' }
 ])
 
 const isModalOpen = ref(false)

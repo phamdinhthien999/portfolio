@@ -1083,7 +1083,7 @@ textarea.form-input::-webkit-resizer { display: none; }
      * typography
      */
 
-    --fs-1: 32px;
+    --fs-1: 28px;
     --fs-2: 24px;
     --fs-3: 26px;
     --fs-4: 18px;

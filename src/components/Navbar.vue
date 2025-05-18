@@ -24,7 +24,7 @@ const currentPath = ref('')
 
 const navItems = ref([
   { name: 'About', path: '/about' },
-  { name: 'Resume', path: '/resume' },
+  // { name: 'Resume', path: '/resume' },
   { name: 'Portfolio', path: '/portfolio' },
   // { name: 'Blog', path: '/blog' },
   // { name: 'Contact', path: '/contact' }

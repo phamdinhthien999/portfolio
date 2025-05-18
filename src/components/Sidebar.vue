@@ -76,12 +76,6 @@ const contacts = ref([
     type: 'link',
     href: 'tel:+84392342999'
   },
-  // {
-  //   icon: 'calendar-outline',
-  //   title: 'Birthday',
-  //   value: 'June 02, 1982',
-  //   type: 'text'
-  // },
   {
     icon: 'location-outline',
     title: 'Location',
