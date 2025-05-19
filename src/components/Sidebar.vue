@@ -2,7 +2,7 @@
   <aside class="sidebar" :class="{ active: isExpanded }">
     <div class="sidebar-info">
       <figure class="avatar-box">
-        <img src="/assets/images/my-avatar.png" alt="Thanh Xuan" width="80">
+        <img src="/assets/images/logo.svg" alt="Thanh Xuan" width="80">
       </figure>
 
       <div class="info-content">
