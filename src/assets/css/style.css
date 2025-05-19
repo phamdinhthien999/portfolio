@@ -1323,6 +1323,28 @@ textarea.form-input::-webkit-resizer { display: none; }
   .navbar-link {
     padding: 16px 7px;
   }
+
+  .filter-list {
+    gap: 4px;
+  }
+
+  .filter-item button {
+    padding: 8px 12px;
+    font-size: var(--fs-6);
+  }
+
+  .info-content .name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 385px) {
+  .filter-item button {
+    padding: 2px 4px;
+  }
+  .filter-item button {
+    border-radius: 4px;
+  }
 }
 
 
