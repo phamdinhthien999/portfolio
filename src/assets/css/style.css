@@ -1644,6 +1644,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-top: 0;
     padding-top: 60px;
     z-index: 1;
+    min-width: 335px;
+    width: 335px;
+    margin-inline: initial;
   }
 
   .sidebar-info { flex-direction: column; }
