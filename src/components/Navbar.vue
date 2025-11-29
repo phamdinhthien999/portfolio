@@ -45,6 +45,13 @@ watch(
   }
 )
 
+watch(
+  () => route.fullPath,
+  () => {
+    LUX.startSoftNavigation();
+  }
+)
+
 </script>
 
 <style scoped>
