@@ -20,6 +20,14 @@
   src="https://js-de.sentry-cdn.com/7bd4a47f53218a126c83d519fa5ab243.min.js"
   crossorigin="anonymous"
 ></script>
+<script>
+  Sentry.init({
+  dsn: "https://e903305ab2b3ce7f58c8a3702af4b326@o4510440450818048.ingest.de.sentry.io/4510447743795280",
+  // Setting this option to true will send default PII data to Sentry.
+  // For example, automatic IP address collection on events
+  sendDefaultPii: true
+});
+</script>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon">
