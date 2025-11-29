@@ -45,13 +45,6 @@ watch(
   }
 )
 
-watch(
-  () => route.fullPath,
-  () => {
-    window['strum']('routeChange', document.location.href)
-  }
-)
-
 </script>
 
 <style scoped>
