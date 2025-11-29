@@ -48,7 +48,6 @@ watch(
 watch(
   () => route.fullPath,
   () => {
-    LUX.startSoftNavigation();
   }
 )
 
