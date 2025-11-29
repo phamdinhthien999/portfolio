@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,23 @@
   <meta property="og:image" content="/assets/images/preview.png" />
   <title>ThanhXuan - Portfolio</title>
 
-  <!-- Request Metrics -->
-  <script>
-      (function(t,e,n,r){function a(){return e&&e.now?e.now():null}if(!n.version){n._events=[];n._errors=[];n._metadata={};n._urlGroup=null;window.RM=n;n.install=function(e){n._options=e;var a=t.createElement("script");a.async=true;a.crossOrigin="anonymous";a.src=r;var o=t.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o)};n.identify=function(t,e){n._userId=t;n._identifyOptions=e};n.sendEvent=function(t,e){n._events.push({eventName:t,metadata:e,time:a()})};n.setUrlGroup=function(t){n._urlGroup=t};n.track=function(t,e){n._errors.push({error:t,metadata:e,time:a()})};n.addMetadata=function(t){n._metadata=Object.assign(n._metadata,t)}}})(document,window.performance,window.RM||{},"https://cdn.requestmetrics.com/agent/current/rm.js");
-      RM.install({ 
-          token: "s8gm8xv:b6iy9ek"
-      });
+  <script type="text/javascript">
+    (function (e, r, n, t, s) { var a = []; e[s] = function () { a.push(arguments) }; e[s].queue = a; var o = []; var i = []; var c = true; var p = void 0; if (window.PerformanceObserver && window.PerformanceObserver.supportedEntryTypes && (PerformanceObserver.supportedEntryTypes.indexOf("longtask") >= 0 || PerformanceObserver.supportedEntryTypes.indexOf("element") >= 0)) { p = new PerformanceObserver(function (e) { e.getEntries().forEach(function (e) { switch (e.entryType) { case "element": i.push(e); break; case "longtask": o.push(e); break; default: break } }) }); p.observe({ entryTypes: ["longtask", "element"] }) } e[s + "lt"] = { longTasks: o, timingElements: i, inPageLoad: c, observer: p }; if (t) { var u = r.createElement(n); u.async = 1; u.src = t; var f = r.getElementsByTagName(n)[0]; f.parentNode.insertBefore(u, f) } })
+      (window, document, "script", "//cdn.sematext.com/experience.js", "strum");
+  </script>
+  <script type="text/javascript">
+    strum('config', { token: '83206b51-7cc9-49fb-b2e1-997755ee5c0b', 'receiverUrl': 'https://rum-receiver.eu.sematext.com' });
   </script>
 
-  <script>(function(){var dbpr=100;if(Math.random()*100>100-dbpr){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",dbpr]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])});});scr.src="https://cdn.debugbear.com/uR3xAhEqpwGx.js";o.head.appendChild(scr);}})()</script>
+  <!-- Request Metrics -->
+  <script>
+    (function (t, e, n, r) { function a() { return e && e.now ? e.now() : null } if (!n.version) { n._events = []; n._errors = []; n._metadata = {}; n._urlGroup = null; window.RM = n; n.install = function (e) { n._options = e; var a = t.createElement("script"); a.async = true; a.crossOrigin = "anonymous"; a.src = r; var o = t.getElementsByTagName("script")[0]; o.parentNode.insertBefore(a, o) }; n.identify = function (t, e) { n._userId = t; n._identifyOptions = e }; n.sendEvent = function (t, e) { n._events.push({ eventName: t, metadata: e, time: a() }) }; n.setUrlGroup = function (t) { n._urlGroup = t }; n.track = function (t, e) { n._errors.push({ error: t, metadata: e, time: a() }) }; n.addMetadata = function (t) { n._metadata = Object.assign(n._metadata, t) } } })(document, window.performance, window.RM || {}, "https://cdn.requestmetrics.com/agent/current/rm.js");
+    RM.install({
+      token: "s8gm8xv:b6iy9ek"
+    });
+  </script>
+
+  <script>(function () { var dbpr = 100; if (Math.random() * 100 > 100 - dbpr) { var d = "dbbRum", w = window, o = document, a = addEventListener, scr = o.createElement("script"); scr.async = !0; w[d] = w[d] || []; w[d].push(["presampling", dbpr]);["error", "unhandledrejection"].forEach(function (t) { a(t, function (e) { w[d].push([t, e]) }); }); scr.src = "https://cdn.debugbear.com/uR3xAhEqpwGx.js"; o.head.appendChild(scr); } })()</script>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon">
@@ -26,12 +35,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
-  
+
   <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

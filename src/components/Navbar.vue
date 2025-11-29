@@ -41,9 +41,17 @@ onMounted(() => {
 watch(
   () => route.path,
   (newPath) => {
-    currentPath.value = newPath
+    currentPath.value = newPath;
   }
 )
+
+watch(
+  () => route.fullPath,
+  () => {
+    window['strum']('routeChange', document.location.href)
+  }
+)
+
 </script>
 
 <style scoped>
