@@ -9,15 +9,10 @@
   <meta property="og:image" content="/assets/images/preview.png" />
   <title>ThanhXuan - Portfolio</title>
 
-  <!-- Request Metrics -->
-  <script>
-    (function (t, e, n, r) { function a() { return e && e.now ? e.now() : null } if (!n.version) { n._events = []; n._errors = []; n._metadata = {}; n._urlGroup = null; window.RM = n; n.install = function (e) { n._options = e; var a = t.createElement("script"); a.async = true; a.crossOrigin = "anonymous"; a.src = r; var o = t.getElementsByTagName("script")[0]; o.parentNode.insertBefore(a, o) }; n.identify = function (t, e) { n._userId = t; n._identifyOptions = e }; n.sendEvent = function (t, e) { n._events.push({ eventName: t, metadata: e, time: a() }) }; n.setUrlGroup = function (t) { n._urlGroup = t }; n.track = function (t, e) { n._errors.push({ error: t, metadata: e, time: a() }) }; n.addMetadata = function (t) { n._metadata = Object.assign(n._metadata, t) } } })(document, window.performance, window.RM || {}, "https://cdn.requestmetrics.com/agent/current/rm.js");
-    RM.install({
-      token: "s8gm8xv:b6iy9ek"
-    });
-  </script>
-
-  <script>(function () { var dbpr = 100; if (Math.random() * 100 > 100 - dbpr) { var d = "dbbRum", w = window, o = document, a = addEventListener, scr = o.createElement("script"); scr.async = !0; w[d] = w[d] || []; w[d].push(["presampling", dbpr]);["error", "unhandledrejection"].forEach(function (t) { a(t, function (e) { w[d].push([t, e]) }); }); scr.src = "https://cdn.debugbear.com/uR3xAhEqpwGx.js"; o.head.appendChild(scr); } })()</script>
+  <script
+  src="https://js-de.sentry-cdn.com/35a18e14b2323caaf26e846fd8a2bff3.min.js"
+  crossorigin="anonymous"
+></script>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon">
