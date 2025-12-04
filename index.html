@@ -15,20 +15,14 @@
   ></script>
 
   <script>
-    Sentry.init({
-      dsn: "https://35a18e14b2323caaf26e846fd8a2bff3@o4510440450818048.ingest.de.sentry.io/4510475712725072",
-      integrations: [Sentry.browserTracingIntegration()],
-
-      // Set tracesSampleRate to 1.0 to capture 100%
-      // of transactions for performance monitoring.
-      // We recommend adjusting this value in production
-      tracesSampleRate: 1.0,
-      // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
-      tracePropagationTargets: ["localhost", /^https:\/\/yourserver\.io\/api/],
-      // Setting this option to true will send default PII data to Sentry.
-      // For example, automatic IP address collection on events
-      sendDefaultPii: true,
-    });
+    window.sentryOnLoad = function () {
+      Sentry.init({
+        dsn: "https://35a18e14b2323caaf26e846fd8a2bff3@o4510440450818048.ingest.de.sentry.io/4510475712725072",
+        integrations: [Sentry.browserTracingIntegration()],
+        tracesSampleRate: 1.0,
+        sendDefaultPii: true,
+      });
+    };
   </script>
 
   <!-- favicon -->
