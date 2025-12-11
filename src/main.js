@@ -28,17 +28,6 @@ const router = createRouter({
 // Create Vue app
 const app = createApp(App)
 
-Sentry.init({
-  app,
-  // Setting this option to true will send default PII data to Sentry.
-  // For example, automatic IP address collection on events
-  sendDefaultPii: true,
-  integrations: [Sentry.browserTracingIntegration()],
-  // We recommend adjusting this value in production, or using tracesSampler
-  // for finer control
-  tracesSampleRate: 1.0,
-});
-
 // Use router
 app.use(router)
 
