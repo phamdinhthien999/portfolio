@@ -17,7 +17,9 @@
       Sentry.init({
         sendDefaultPii: true,
         tracesSampleRate: 1.0,
-        integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
+        integrations: [Sentry.browserTracingIntegration({
+          enableInp: true
+        }), Sentry.replayIntegration()],
       });
     });
   </script>
