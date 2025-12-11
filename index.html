@@ -9,22 +9,20 @@
   <meta property="og:image" content="/assets/images/preview.png" />
   <title>ThanhXuan - Portfolio</title>
 
+
+  <script src="https://js-de.sentry-cdn.com/dc4c7fda63fe741867102014223e225a.min.js" crossorigin="anonymous"></script>
+
   <script>
-    window.sentryOnLoad = function () {
+    Sentry.onLoad(function () {
       Sentry.init({
-        dsn: "https://35a18e14b2323caaf26e846fd8a2bff3@o4510440450818048.ingest.de.sentry.io/4510475712725072",
-        integrations: [Sentry.browserTracingIntegration()],
-        tracesSampleRate: 1.0,
         sendDefaultPii: true,
+        tracesSampleRate: 1.0,
+        integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
       });
-    };
+    });
   </script>
 
-  <script
-    src="https://js-de.sentry-cdn.com/35a18e14b2323caaf26e846fd8a2bff3.min.js"
-    crossorigin="anonymous"
-  ></script>
-x  
+
   <!-- favicon -->
   <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon">
 
