@@ -42,7 +42,7 @@
           const duration = (end - start) * 1000;
 
           // ---  Xử lý Pageload & Navigation (Web Vitals) ---
-          if (op === 'pageload' || op === 'navigation') {
+          if (op === 'pageload') {
             // Lấy các chỉ số (nếu không có thì mặc định là 0)
             const lcp = (measurements['lcp'] && measurements['lcp'].value) || 0;
             const cls = (measurements['cls'] && measurements['cls'].value) || 0;
