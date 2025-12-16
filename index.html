@@ -20,7 +20,6 @@
         tracesSampleRate: 1.0,
         replaysOnErrorSampleRate: 1.0,
         beforeSendTransaction(event) {
-          if(op === 'navigation') return event;
           if (!event)
             return null;
 
@@ -81,7 +80,7 @@
             }
             return null;
           }
-          return null;
+          return event;
         }
       });
     });
