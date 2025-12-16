@@ -17,11 +17,7 @@
         sendDefaultPii: true,
         integrations: [Sentry.browserTracingIntegration()],
         tracesSampleRate: 1.0,
-        replaysOnErrorSampleRate: 1.0,
-        beforeSendTransaction(event) {
-          console.log("ABC")
-          return event;
-        }
+        replaysOnErrorSampleRate: 1.0
       });
     });
 
