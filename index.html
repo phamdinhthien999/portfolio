@@ -15,7 +15,7 @@
     Sentry.onLoad(function () {
       Sentry.init({
         sendDefaultPii: true,
-        integrations: [Sentry.browserTracingIntegration({ enableUserInteraction: true })],
+        integrations: [Sentry.browserTracingIntegration()],
         tracesSampleRate: 1.0,
         replaysOnErrorSampleRate: 1.0,
         beforeSendTransaction(event) {
@@ -54,26 +54,15 @@
               fcp > THRESHOLDS.FCP ||
               ttfb > THRESHOLDS.TTFB;
 
-            if (!isBadExperience && op === 'pageload') {
-              // 1. Gắn spans về mảng rỗng
-              event.spans = [];
 
-              // 2. Xóa bỏ hoàn toàn các chỉ số measurements
-              if (event.measurements) {
-                const metricsToClear = ['lcp', 'cls', 'inp', 'fcp', 'ttfb', 'fid'];
-                metricsToClear.forEach(key => {
-                  if (key in event.measurements) {
-                    delete event.measurements[key];
-                  }
-                });
-              }
-
-              return event;
-            } else {
+            if (isBadExperience) {
               return event;
             }
-            return null;
-            
+            if (event.spans) {
+              event.spans = event.spans.filter(span => span.op === 'http.client' || span.op.startsWith('ui'));
+              event.measurements = {}
+            }
+            return event;
           }
 
           // --- Xử lý Tương tác (Click) ---
