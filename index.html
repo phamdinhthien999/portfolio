@@ -59,7 +59,6 @@
               return event;
             }
             if (event.spans) {
-              event.spans = event.spans.filter(span => span.op === 'http.client' || span.op.startsWith('ui'));
               event.measurements = {}
             }
             return event;
