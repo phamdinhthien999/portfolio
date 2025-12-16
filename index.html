@@ -20,6 +20,7 @@
         replaysOnErrorSampleRate: 1.0,
         beforeSendTransaction(event) {
           console.log("ABC")
+          return event;
         }
       });
     });
