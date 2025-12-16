@@ -18,6 +18,10 @@
         sendDefaultPii: true,
         tracesSampleRate: 1.0,
         integrations: [Sentry.browserTracingIntegration()],
+        beforeSendTransaction(transaction, hint) {
+          debugger
+          return transaction; // Returning the transaction sends it to Sentry
+        }
       });
     });
   </script>
